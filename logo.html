@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InheritChain — Logo Proposal 001</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="logo-mark.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-logo">
+  <canvas class="field"></canvas>
+  <div class="spotlight"></div>
+  <div class="watermark" aria-hidden="true">ID</div>
+
+  <header class="topbar">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+      </div>
+    </div>
+    <nav class="navbar">
+      <a class="nav-logo magnetic" href="/" aria-label="InheritChain">
+        <img class="nav-mark" src="logo-mark.svg" alt="" />
+        <span class="nav-wm"><span class="w-solid">INHERIT</span><span class="w-out">CHAIN</span></span>
+      </a>
+      <a class="back-link magnetic" href="/">← index</a>
+    </nav>
+  </header>
+
+  <main class="sheet">
+    <div class="sheet-head">
+      <p class="sheet-kicker">// Proposal 001 — Visual identity</p>
+      <h1 class="sheet-title">The pin<span class="out">.</span></h1>
+      <p class="sheet-sub">
+        The cyan I is threaded through the C — one crossing over, one under:
+        locked, not placed. Identity pinned inside the chain. The acid node is
+        the asset held at the seam. Hard edges, no rounding, no gradients:
+        the mark is built like the protocol — rigid, verifiable, permanent.
+      </p>
+    </div>
+
+    <section class="spec">
+      <div class="spec-head">
+        <span><span class="spec-num">01</span><span class="spec-name">Primary mark</span></span>
+        <span class="spec-note">stroke 10 · bar 10 × 84 · node 10²</span>
+      </div>
+      <div class="spec-body split">
+        <figure class="variant">
+          <img class="logo-mark" src="logo-mark.svg" alt="InheritChain mark" />
+          <figcaption>Clean</figcaption>
+        </figure>
+        <figure class="variant">
+          <svg class="logo-mark" viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="0" y1="60" x2="140" y2="60" stroke="rgba(242,242,239,0.22)" stroke-width="1" stroke-dasharray="4 4"/>
+            <line x1="65" y1="0" x2="65" y2="120" stroke="rgba(242,242,239,0.22)" stroke-width="1" stroke-dasharray="4 4"/>
+            <path d="M 100 35 H 45 V 85 H 100" fill="none" stroke="#ff2a6d" stroke-width="10" stroke-linecap="square"/>
+            <rect x="60" y="18" width="10" height="84" fill="#00e5ff"/>
+            <line x1="58" y1="85" x2="72" y2="85" stroke="#ff2a6d" stroke-width="10"/>
+            <rect x="60" y="55" width="10" height="10" fill="#d6ff00"/>
+          </svg>
+          <figcaption>Construction</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="spec">
+      <div class="spec-head">
+        <span><span class="spec-num">02</span><span class="spec-name">Horizontal lockup</span></span>
+        <span class="spec-note">mark + wordmark · divider 1px</span>
+      </div>
+      <div class="spec-body">
+        <div class="lockup-h">
+          <img class="logo-mark sm" src="logo-mark.svg" alt="" />
+          <span class="lockup-divider"></span>
+          <span class="wordmark"><span class="w-solid">INHERIT</span><span class="w-out">CHAIN</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec">
+      <div class="spec-head">
+        <span><span class="spec-num">03</span><span class="spec-name">Stacked lockup</span></span>
+        <span class="spec-note">centered · caption optional</span>
+      </div>
+      <div class="spec-body">
+        <div class="lockup-v">
+          <img class="logo-mark" src="logo-mark.svg" alt="" />
+          <span class="wordmark"><span class="w-solid">INHERIT</span><span class="w-out">CHAIN</span></span>
+          <span class="lockup-caption">Digital inheritance protocol</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec">
+      <div class="spec-head">
+        <span><span class="spec-num">04</span><span class="spec-name">Mono / negative</span></span>
+        <span class="spec-note">1-color reproduction</span>
+      </div>
+      <div class="spec-body split">
+        <figure class="variant dark">
+          <img class="logo-mark" src="logo-mark-mono.svg" alt="Mono mark on black" />
+          <figcaption>Mono / on black</figcaption>
+        </figure>
+        <figure class="variant acid">
+          <svg class="logo-mark" viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M 100 35 H 45 V 85 H 100" fill="none" stroke="#000" stroke-width="10" stroke-linecap="square"/>
+            <rect x="60" y="18" width="10" height="84" fill="#000"/>
+            <line x1="58" y1="85" x2="72" y2="85" stroke="#000" stroke-width="10"/>
+            <rect x="60" y="55" width="10" height="10" fill="#000"/>
+          </svg>
+          <figcaption>Negative / on acid</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <p class="sheet-foot">Files: logo-mark.svg · logo-mark-mono.svg · logo-horizontal.svg</p>
+  </main>
+
+  <footer class="bottombar">
+    <div class="marquee">
+      <div class="marquee-track reverse">
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+        <span>Logo proposal 001&nbsp;///&nbsp;InheritChain&nbsp;///&nbsp;Privacy by design&nbsp;///&nbsp;</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="frame" aria-hidden="true">
+    <span class="corner tl"></span>
+    <span class="corner tr"></span>
+    <span class="corner bl"></span>
+    <span class="corner br"></span>
+  </div>
+
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="scan-band" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><div class="cursor-dot"></div></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="site.js"></script>
+  <script>
+    gsap.set('.topbar', { yPercent: -110 });
+    gsap.set('.bottombar', { yPercent: 110 });
+    gsap.set('.frame', { opacity: 0 });
+    gsap.set('.sheet-head > *', { opacity: 0, y: 24 });
+    gsap.set('.spec', { opacity: 0, y: 40 });
+    gsap.set('.sheet-foot, .back-link', { opacity: 0 });
+    gsap.set('.watermark', { opacity: 0 });
+
+    const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+    tl.to('.topbar', { yPercent: 0, duration: 0.7 })
+      .to('.bottombar', { yPercent: 0, duration: 0.7 }, '<')
+      .to('.frame', { opacity: 1, duration: 0.6 }, '<0.15')
+      .to('.sheet-head > *', { opacity: 1, y: 0, duration: 0.7, stagger: 0.08 }, '-=0.3')
+      .to('.spec', { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, '-=0.4')
+      .to('.watermark', { opacity: 1, duration: 1.4 }, '-=0.8')
+      .to('.sheet-foot, .back-link', { opacity: 1, duration: 0.6 }, '-=1');
+  </script>
+</body>
+</html>
