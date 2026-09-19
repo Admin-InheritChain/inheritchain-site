@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/RC_IC_Founder.jpg",
+      "destination": "https://cdn.jsdelivr.net/gh/Admin-InheritChain/inheritchain-site@ea6eca7557ac117e971f57b189750dcdc7aebf26/RC_IC_Founder.jpg"
+    }
+  ]
+}
