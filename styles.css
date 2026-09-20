@@ -732,22 +732,36 @@ main { position: relative; z-index: 10; }
 
 .founder-layout {
   display: grid;
-  grid-template-columns: minmax(260px, 340px) 1fr;
+  grid-template-columns: minmax(260px, 360px) minmax(300px, 440px);
   gap: 3.5rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .founder-portrait {
   border: 2px solid var(--line);
   box-shadow: 8px 8px 0 var(--cyan);
   background: #000;
+  display: flex;
+  flex-direction: column;
 }
 
 .founder-portrait img {
   display: block;
   width: 100%;
+  flex: 1;
+  min-height: 0;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+}
+
+.founder-layout .section-body {
+  border: 2px solid var(--line);
+  box-shadow: 8px 8px 0 var(--acid);
+  background: #000;
+  padding: 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .founder-portrait figcaption {

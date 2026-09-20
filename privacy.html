@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy — InheritChain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="logo-mark.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-logo">
+  <canvas class="field"></canvas>
+  <div class="spotlight"></div>
+
+  <header class="topbar">
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Privacy /// Private by default /// InheritChain /// </span>
+        <span>Privacy /// Private by default /// InheritChain /// </span>
+        <span>Privacy /// Private by default /// InheritChain /// </span>
+        <span>Privacy /// Private by default /// InheritChain /// </span>
+        <span>Privacy /// Private by default /// InheritChain /// </span>
+        <span>Privacy /// Private by default /// InheritChain /// </span>
+        <span>Privacy /// Private by default /// InheritChain /// </span>
+        <span>Privacy /// Private by default /// InheritChain /// </span>
+      </div>
+    </div>
+    <nav class="navbar">
+      <a class="nav-logo" href="/" aria-label="InheritChain">
+        <img class="nav-mark" src="logo-mark.svg" alt="" />
+        <span class="nav-wm"><span class="w-solid">INHERIT</span><span class="w-out">CHAIN</span></span>
+      </a>
+      <a class="back-link" href="/">← Index</a>
+    </nav>
+  </header>
+
+  <main class="sheet">
+    <div class="sheet-head">
+      <p class="sheet-kicker">// Privacy</p>
+      <h1 class="sheet-title">What we collect.<br /><span class="out">What we never will.</span></h1>
+      <p class="sheet-sub">Last updated: 2026 · InheritChain is in research + MVP design. This page covers the coming-soon site only.</p>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><span><span class="spec-num">01</span><span class="spec-name">What we collect</span></span></div>
+      <div class="spec-body" style="display:block; text-align:left; padding:2rem;">
+        <div class="section-body">
+          <p><strong>Email address.</strong> If you join the waitlist, we store the email you submit. That's it — no name, no wallet, no identity verification.</p>
+          <p><strong>Technical requests.</strong> This site loads fonts (Google Fonts) and scripts (jsDelivr) from third-party CDNs, which receive standard request data like your IP address, as any web request does.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><span><span class="spec-num">02</span><span class="spec-name">How we use it</span></span></div>
+      <div class="spec-body" style="display:block; text-align:left; padding:2rem;">
+        <div class="section-body">
+          <p>Your email is used only to send product updates, research invitations and early-access notices for InheritChain. We don't sell it, share it, or use it for anything else.</p>
+          <p>Waitlist emails are stored in a private database (MongoDB Atlas). We also send ourselves a notification when someone joins.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><span><span class="spec-num">03</span><span class="spec-name">What we never ask for</span></span></div>
+      <div class="spec-body" style="display:block; text-align:left; padding:2rem;">
+        <div class="section-body">
+          <p><strong>We will never ask for your seed phrase, private keys or recovery credentials.</strong> Not on this site, not by email, not ever. Anyone who does is not us.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><span><span class="spec-num">04</span><span class="spec-name">Your choices</span></span></div>
+      <div class="spec-body" style="display:block; text-align:left; padding:2rem;">
+        <div class="section-body">
+          <p>Want off the list, or want to know what we hold about you? Email <a href="mailto:admin@inheritchain.xyz" style="border-bottom:1px solid var(--cyan);">admin@inheritchain.xyz</a> and we'll delete or share your data on request.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="sheet-foot">© 2026 InheritChain — Private by default</p>
+  </main>
+
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="scan-band" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><div class="cursor-dot"></div></div>
+
+  <script src="site.js"></script>
+</body>
+</html>
