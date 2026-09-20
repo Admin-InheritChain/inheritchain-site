@@ -17,7 +17,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const col = (await getDb()).collection('waitlist');
+    const db = await getDb();
+    const col = db.collection('waitlist');
 
     if (req.method === 'GET') {
       const entries = await col
@@ -47,16 +48,46 @@ export default async function handler(req, res) {
           const dom = e.email.split('@')[1];
           if (dom) domains[dom] = (domains[dom] || 0) + 1;
         }
+
+        const views = await db.collection('pageviews')
+          .find({}, { projection: { ts: 1, p: 1, r: 1 } })
+          .sort({ ts: -1 })
+          .limit(20000)
+          .toArray();
+        const dailyViews = daily.map(d => ({ date: d.date, count: 0 }));
+        const vidx = new Map(dailyViews.map((d, i) => [d.date, i]));
+        const paths = {}, refs = {};
+        let views7 = 0, views30 = 0;
+        for (const v of views) {
+          const t = v.ts ? v.ts.getTime() : null;
+          if (!t) continue;
+          if (now - t < 7 * day) views7++;
+          if (now - t < 30 * day) views30++;
+          const key = v.ts.toISOString().slice(0, 10);
+          if (vidx.has(key)) dailyViews[vidx.get(key)].count++;
+          if (v.p) paths[v.p] = (paths[v.p] || 0) + 1;
+          if (v.r) refs[v.r] = (refs[v.r] || 0) + 1;
+        }
+        const top = obj => Object.entries(obj)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 8)
+          .map(([label, count]) => ({ label, count }));
+
         return res.status(200).json({
           total: entries.length,
           last7,
           last30,
           undated,
           daily,
-          domains: Object.entries(domains)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 8)
-            .map(([domain, count]) => ({ domain, count }))
+          domains: top(domains).map(d => ({ domain: d.label, count: d.count })),
+          views: {
+            total: views.length,
+            last7: views7,
+            last30: views30,
+            daily: dailyViews,
+            paths: top(paths),
+            refs: top(refs)
+          }
         });
       }
 

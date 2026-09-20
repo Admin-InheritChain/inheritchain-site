@@ -1,4 +1,8 @@
 // Admin console: token auth + waitlist management + simple analytics
+const capStyle = document.createElement('style');
+capStyle.textContent = '.chart-cap{font-size:.75rem;color:var(--muted);margin-top:.75rem;display:flex;justify-content:space-between}';
+document.head.appendChild(capStyle);
+
 const KEY = 'ic_admin_token';
 const $ = s => document.querySelector(s);
 
@@ -45,8 +49,14 @@ async function loadAll() {
     ]);
     entries = list.entries;
     renderStats(stats);
-    renderChart(stats.daily);
-    renderDomains(stats.domains);
+    renderChart($('#chart'), stats.daily, '#chartStart', '#chartEnd');
+    renderList($('#domains'), stats.domains.map(d => ({ label: d.domain, count: d.count })));
+    if (stats.views) {
+      renderViews(stats.views);
+      renderChart($('#chartV'), stats.views.daily, '#chartVStart', '#chartVEnd');
+      renderList($('#paths'), stats.views.paths);
+      renderList($('#refs'), stats.views.refs);
+    }
     renderTable();
     setMsg('');
   } catch (e) {
@@ -61,31 +71,36 @@ function renderStats(s) {
   $('#stDom').textContent = s.domains.length ? new Set(entries.map(e => e.email.split('@')[1])).size : 0;
 }
 
-function renderChart(daily) {
-  const chart = $('#chart');
-  chart.innerHTML = '';
+function renderViews(v) {
+  $('#stViews').textContent = v.total;
+  $('#stV7').textContent = v.last7;
+  $('#stV30').textContent = v.last30;
+  $('#stRef').textContent = v.refs.length;
+}
+
+function renderChart(el, daily, startSel, endSel) {
+  el.innerHTML = '';
   const max = Math.max(1, ...daily.map(d => d.count));
   for (const d of daily) {
     const bar = document.createElement('div');
     bar.className = 'bar' + (d.count === max && max > 1 ? ' hot' : '');
     bar.style.height = Math.max(2, (d.count / max) * 100) + '%';
     bar.title = `${d.date}: ${d.count}`;
-    chart.appendChild(bar);
+    el.appendChild(bar);
   }
-  $('#chartStart').textContent = daily[0]?.date || '';
-  $('#chartEnd').textContent = daily[daily.length - 1]?.date || '';
+  $(startSel).textContent = daily[0]?.date || '';
+  $(endSel).textContent = daily[daily.length - 1]?.date || '';
 }
 
-function renderDomains(domains) {
-  const box = $('#domains');
+function renderList(box, items) {
   box.innerHTML = '';
-  if (!domains.length) { box.innerHTML = '<p class="wl-empty" style="padding:0.5rem">No data yet.</p>'; return; }
-  const max = domains[0].count;
-  for (const d of domains) {
+  if (!items.length) { box.innerHTML = '<p class="wl-empty" style="padding:0.5rem">No data yet.</p>'; return; }
+  const max = items[0].count;
+  for (const d of items) {
     const row = document.createElement('div');
     row.className = 'dom-row';
     row.innerHTML = `<span class="dom-name"></span><span class="dom-bar"><i style="width:${(d.count / max) * 100}%"></i></span><span class="dom-n">${d.count}</span>`;
-    row.querySelector('.dom-name').textContent = d.domain;
+    row.querySelector('.dom-name').textContent = d.label;
     box.appendChild(row);
   }
 }

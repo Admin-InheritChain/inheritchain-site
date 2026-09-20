@@ -89,3 +89,18 @@ if (field) {
   }
   drawField();
 }
+
+// Lightweight pageview ping — skipped for admin sessions and admin pages
+try {
+  if (!localStorage.getItem('ic_admin_token') && !location.pathname.startsWith('/admin')) {
+    fetch('/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        p: location.pathname,
+        r: document.referrer ? new URL(document.referrer).host : ''
+      }),
+      keepalive: true
+    }).catch(() => {});
+  }
+} catch {}

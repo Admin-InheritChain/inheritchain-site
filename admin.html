@@ -43,7 +43,9 @@
     .chart { display: flex; align-items: flex-end; gap: 3px; height: 120px; }
     .chart .bar { flex: 1; background: var(--cyan); min-height: 2px; opacity: 0.85; }
     .chart .bar.hot { background: var(--acid); opacity: 1; }
-    .chart-cap { font-size: 0.75rem; color: var(--muted); margin-top: 0.75rem; display: flex; justify-content: space-between; }
+    .chart.views .bar { background: var(--magenta); }
+    .chart.views .bar.hot { background: var(--acid); }
+    .panel-note { font-size: 0.75rem; color: var(--muted); padding: 0 1.25rem 1rem; }
 
     .dom-row { display: flex; align-items: center; gap: 1rem; padding: 0.35rem 0; font-size: 0.9rem; }
     .dom-name { width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -123,6 +125,13 @@
         <div class="stat-cell"><p class="stat-num" id="stDom">—</p><p class="stat-cap">Unique domains</p></div>
       </div>
 
+      <div class="stat-row">
+        <div class="stat-cell"><p class="stat-num" id="stViews">—</p><p class="stat-cap">Total views</p></div>
+        <div class="stat-cell"><p class="stat-num" id="stV7">—</p><p class="stat-cap">Views · 7 days</p></div>
+        <div class="stat-cell"><p class="stat-num" id="stV30">—</p><p class="stat-cap">Views · 30 days</p></div>
+        <div class="stat-cell"><p class="stat-num" id="stRef">—</p><p class="stat-cap">Referrers</p></div>
+      </div>
+
       <div class="panel">
         <div class="panel-head"><span class="panel-title"><b>01</b>Signups — last 30 days</span></div>
         <div class="panel-body">
@@ -132,13 +141,32 @@
       </div>
 
       <div class="panel">
-        <div class="panel-head"><span class="panel-title"><b>02</b>Top email domains</span></div>
+        <div class="panel-head"><span class="panel-title"><b>02</b>Views — last 30 days</span></div>
+        <div class="panel-body">
+          <div class="chart views" id="chartV"></div>
+          <div class="chart-cap"><span id="chartVStart"></span><span id="chartVEnd"></span></div>
+        </div>
+        <p class="panel-note">Your own visits are excluded while the admin token is stored in this browser.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><span class="panel-title"><b>03</b>Top pages</span></div>
+        <div class="panel-body" id="paths"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><span class="panel-title"><b>04</b>Top referrers</span></div>
+        <div class="panel-body" id="refs"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><span class="panel-title"><b>05</b>Top email domains</span></div>
         <div class="panel-body" id="domains"></div>
       </div>
 
       <div class="panel">
         <div class="panel-head">
-          <span class="panel-title"><b>03</b>Waitlist entries</span>
+          <span class="panel-title"><b>06</b>Waitlist entries</span>
           <span class="wl-count" id="wlCount"></span>
         </div>
         <div class="tools">
